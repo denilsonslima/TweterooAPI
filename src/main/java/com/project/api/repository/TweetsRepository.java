@@ -9,8 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.project.api.models.TweetsModels;
 
 public interface TweetsRepository extends JpaRepository<TweetsModels, Long> {
-  @Query(value = "SELECT t FROM TweetsModels t ORDER BY t.id DESC")
-  List<TweetsModels> getRecentTweets(Pageable pageable);
+  List<TweetsModels> findAllByOrderByIdDesc(Pageable pageable);
 
   List<TweetsModels> findAllByUsername(String username);
 }

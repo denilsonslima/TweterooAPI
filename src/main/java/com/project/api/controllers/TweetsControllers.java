@@ -19,7 +19,7 @@ public class TweetsControllers {
   @GetMapping
   public List<TweetsModels> getPagedTweets(@RequestParam(defaultValue = "0") int page){
     Pageable pageable = PageRequest.of(page, 5);
-    return tweets.getRecentTweets(pageable);
+    return tweets.findAllByOrderByIdDesc(pageable);
   }
 
   @GetMapping(value = "/{username}")
