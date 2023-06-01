@@ -26,4 +26,10 @@ public class TweetsModels {
 
   @Column(nullable = false)
   String text;
+
+  public TweetsModels(String username, String avatar, String text) {
+    this.username = username;
+    this.avatar = avatar;
+    this.text = text;
+  }
 }
